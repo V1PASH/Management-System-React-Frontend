@@ -17,10 +17,10 @@ function NavBar({setLoggedIn}){
         <>
             <nav className="w-full bg-black py-[10px] md:flex justify-center text-white h-fit md:h-[70px]  sm:block">
                 <span className="w-[20%] text-center content-center ">
-                    <img src="/src/assets/logo.png" alt=""  className="invert h-[20px] md:h-[100%] m-auto"/>
+                    <img src="/src/assets/logo.png" alt=""  className="invert h-[60px] md:h-[100%] m-auto"/>
                 </span>
                 <span className="w-[30%] content-center">
-                    <input type="text"  className="w-[100%] rounded-3xl text-zinc-200 bg-zinc-700 h-[70%] px-4 focus-visible:outline-0" placeholder="Search"/>
+                    <input type="text"  className="w-[70%] rounded-3xl text-zinc-200 bg-zinc-700 h-[70%] px-4 focus-visible:outline-0 md:w-[100%]" placeholder="Search"/>
                 </span>
 
                 {/*pc*/}
@@ -44,10 +44,10 @@ function NavBar({setLoggedIn}){
                     <button onClick={logOut} className="bg-red-600 text-white py-[10px] px-[20px] rounded-xl cursor-pointer ">Logout</button>
                 </span>
 
-            {/*    mobile */}
+            {/* mobile */}
 
-                <span className="block md:hidden">
-                    <button onClick={()=>isOpen(!open)} className="">
+                <span className="block md:hidden mt-2 ml-4">
+                    <button onClick={()=>isOpen(!open)} className="border-1 py-[5px] px-[10px]">
                         <i className="fa-solid fa-bars"></i>
                     </button>
                 </span>
@@ -70,10 +70,9 @@ function NavBar({setLoggedIn}){
                     </span>
                     </li>
                 </ul>
-
-
             </nav>
         </>
     )
 }
+
 export default NavBar

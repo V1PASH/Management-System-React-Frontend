@@ -1,0 +1,13 @@
+.form-container{
+    display: flex;
+    height: 100vh;
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+}
+.side-panel{
+    height: 100%; width: 60%;
+}
+.btn{
+    background-color: white;
+}

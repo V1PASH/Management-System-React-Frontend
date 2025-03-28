@@ -1,9 +1,9 @@
 
-function Home(){
+function Home(props){
 
     return(
         <>
-          home
+          Hello {props.user}
         </>
     )
 }

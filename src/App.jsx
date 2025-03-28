@@ -19,11 +19,12 @@ function App() {
     sessionStorage.setItem("isLoggedIn", isLoggedIn?"true":"false");
   }, [isLoggedIn]);
 
+  const [user,setUser]  =useState(null);
   return (
     <Router>
       <Routes>
-        <Route path="/" element={isLoggedIn ? <Navigate to="/home" /> : <LoginForm Authenticate={setLoggedIn} />} />
-        <Route path="/home" element={isLoggedIn ? <><NavBar setLoggedIn={setLoggedIn}/><Home/></> : <Navigate to="/"/>}/>
+        <Route path="/" element={isLoggedIn ? <Navigate to="/home" />:<LoginForm Authenticate={setLoggedIn} setUser={setUser} />} />
+        <Route path="/home" element={isLoggedIn ? <><NavBar setLoggedIn={setLoggedIn}/><Home user={user}/></> : <Navigate to="/"/>}/>
         <Route path="/account" element={isLoggedIn?<><NavBar setLoggedIn={setLoggedIn}/><Account/></>:<Navigate to="/"/>}/>
         <Route path="/settings" element={isLoggedIn?<><NavBar setLoggedIn={setLoggedIn}/><Settings/></>:<Navigate to="/"/>}/>
         <Route path="/about" element={isLoggedIn?<><NavBar setLoggedIn={setLoggedIn}/><About/></>:<Navigate to="/"/>}/>
